@@ -1,0 +1,9 @@
+{
+  "name": "free-code-camp-algorthyms",
+  "version": "0.0.0",
+  "description": "free-code-camp-algorthyms",
+  "main": "app.js",
+  "author": {
+    "name": "Admin"
+  }
+}
