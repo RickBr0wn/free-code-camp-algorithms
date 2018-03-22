@@ -1,3 +1,5 @@
+import { fail } from "assert";
+
 'use strict';
 
 // A repo to create a Node.js Console App.
@@ -21,16 +23,26 @@
 
 // MY FUNCTION
 function truthCheck(collection, pre) {
+    let counter = 0;
     // Is everyone being true?
     for (let i = 0; i < collection.length; i++) {
         console.log(collection[i]);
         if (collection[i].hasOwnProperty(pre)) {
             console.log(collection[i] + ": TRUE");
-        } else if{
+            counter += 1;
+        } else {
             console.log(collection[i] + ": FALSE");
         }
     }
+
+    if (counter === collection.length) {
+        console.log("** TRUE **");
+        return true;
+    } else {
+        console.log("** FALSE **");
+        return false;
+    }
 }
 
-truthCheck([{ "user": "Tinky-Winky", "sex": "male" }, { "user": "Dipsy" }, { "user": "Laa-Laa", "sex": "female" }, { "user": "Po", "sex": "female" }], "sex")
+truthCheck([{ "user": "Tinky-Winky", "sex": "male" }, { "user": "Dipsy", "sex": "male" }, { "user": "Laa-Laa", "sex": "female" }, { "user": "Po", "sex": "female" }], "sex")
 // should return true
